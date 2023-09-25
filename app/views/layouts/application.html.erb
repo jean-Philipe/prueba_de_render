@@ -1,155 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinder-Like View</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:  #060606;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
 
-# <!DOCTYPE html>
-# <html lang="en">
-# <head>
-#     <meta charset="UTF-8">
-#     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-#     <title>Tinder-Like View</title>
-#     <style>
-#         body {
-#             font-family: Arial, sans-serif;
-#             background-color:  #060606;
-#             margin: 0;
-#             padding: 0;
-#             display: flex;
-#             flex-direction: column;
-#             align-items: center;
-#             height: 100vh;
-#         }
+        header {
+            display: flex;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
 
-#         header {
-#             display: flex;
-#             background-color: black;
-#             justify-content: center;
-#             align-items: center;
-#             text-align: center;
-#             padding: 10px;
-#             width: 100%;
-#         }
+        .header-title {
+            font-size: 24px;
+            color: white;
+            font-style: italic;
+            margin:10px;
+        }
 
-#         .header-title {
-#             font-size: 24px;
-#             color: white;
-#             font-style: italic;
-#             margin:10px;
-#         }
+        .logo {
+          display: flex;
+          align-items: center;
+          margin:10px;
+         }
 
-#         .logo {
-#           display: flex;
-#           align-items: center;
-#           margin:10px;
-#          }
+        .logo img {
+            height: 80px;   
+        }
 
-#         .logo img {
-#             height: 80px;   
-#         }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+        }
 
-#         .card-container {
-#             display: flex;
-#             justify-content: center;
-#             align-items: flex-start;
-#             flex-wrap: wrap;
-#             width: 100%;
-#         }
+        .card {
+            width: 350px;
+            height: 550px;
+            background-color: #0F0E0E;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
 
-#         .card {
-#             width: 350px;
-#             height: 550px;
-#             background-color: #0F0E0E;
-#             margin: 15px;
-#             padding: 15px;
-#             border-radius: 8px;
-#             overflow: hidden;
-#         }
+        .card img {
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+        }
 
-#         .card img {
-#             width: 100%;
-#             height: 60%;
-#             object-fit: cover;
-#         }
+        .card-content {
+            padding: 15px;
+        }
 
-#         .card-content {
-#             padding: 15px;
-#         }
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #EFEFEF;
+        }
 
-#         .card-title {
-#             font-size: 24px;
-#             margin-bottom: 5px;
-#             color: #EFEFEF;
-#         }
+        .card-description {
+            font-size: 16px;
+            color: #EFEFEF;
+        }
 
-#         .card-description {
-#             font-size: 16px;
-#             color: #EFEFEF;
-#         }
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
 
-#         .button-container {
-#             display: flex;
-#             align-items: center;
-#             justify-content: space-between;
-#             padding: 20px;
-#         }
+        .action-button {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 6px;
+            color: white;
+            font-size: 25px;
+        }
 
-#         .action-button {
-#             flex: 1;
-#             text-align: center;
-#             margin: 10px;
-#             padding: 20px;
-#             border-radius: 6px;
-#             color: white;
-#             font-size: 25px;
-#         }
+        .action-button.like {
+            background-color: #4CAF50;
+        }
 
-#         .action-button.like {
-#             background-color: #4CAF50;
-#         }
-
-#         .action-button.dislike {
-#             background-color: #F44336;
-#         }
-#     </style>
-# </head>
-# <body>
-#     <header>
-#       <div class="logo">
-#         <img src="assets/calcetinder.jpeg" alt="CALCETINDER">
-#       </div>
-#       <h1 class="header-title">It´s a match!</h1>
-#     </header>
-#     <div class="card-container"> <!-- Contenedor para las tarjetas -->
-#         <div class="card">
-#           <img src="https://lh6.googleusercontent.com/-38u-PRkwI2E/TXi3-M2lzRI/AAAAAAAAAuw/b2grG4qKrxs/s1600/smileytoesocksxj1.jpg" alt="Profile Image">
-#           <div class="card-content">
-#             <h2 class="card-title">Calcetines con Dedos</h2>
-#             <p class="card-description">Para el invierno son goood.</p>
-#             <div class="button-container">
-#                 <div class="action-button dislike"> DISLIKE </div>
-#                 <div class="action-button like">    LIKE    </div>
-#           </div>
-#         </div>
-#         </div>
-#         <div class="card">
-#           <img src="https://pbs.twimg.com/media/DcNIWjmX4AAsRVl?format=jpg&name=large" alt="Profile Image">
-#           <div class="card-content">
-#             <h2 class="card-title">Calcetin con Rombos Man</h2>
-#             <p class="card-description">Elenco 31 Minutos. Deportista. Superhéroe.</p>
-#             <div class="button-container">
-#                 <div class="action-button dislike">DISLIKE</div>
-#                 <div class="action-button like">  LIKE  </div>
-#             </div>
-#         </div>
-#         </div>
-#         <div class="card">
-#           <img src="https://www.thesockscloset.cl/cdn/shop/files/Calcetines_largos_collection-min_1800x.jpg?v=1628864654" alt="Profile Image">
-#           <div class="card-content">
-#             <h2 class="card-title">Calcetines de Flamenco</h2>
-#             <p class="card-description">Comodos. Nuevos. Bonitos.</p>
-#             <div class="button-container">
-#                 <div class="action-button dislike">DISLIKE</div>
-#                 <div class="action-button like">  LIKE  </div>
-#             </div>
-#         </div>
-#         </div>
-#     </div>
-# </body>
-# </html>
+        .action-button.dislike {
+            background-color: #F44336;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        
+        <% if user_signed_in? %>
+        <%= link_to "Edit", edit_user_registration_path %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+  
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
+  
+      <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+  
+      <%= yield %>
+     
+    </nav>
+    <header>
+      <div class="logo">
+        <img src="assets/calcetinder.jpeg" alt="CALCETINDER">
+      </div>
+      <h1 class="header-title">It´s a match!</h1>
+    </header>
+    <div class="card-container"> <!-- Contenedor para las tarjetas -->
+        <div class="card">
+          <img src="https://lh6.googleusercontent.com/-38u-PRkwI2E/TXi3-M2lzRI/AAAAAAAAAuw/b2grG4qKrxs/s1600/smileytoesocksxj1.jpg" alt="Profile Image">
+          <div class="card-content">
+            <h2 class="card-title">Calcetines con Dedos</h2>
+            <p class="card-description">Para el invierno son goood.</p>
+            <div class="button-container">
+                <div class="action-button dislike"> DISLIKE </div>
+                <div class="action-button like">    LIKE    </div>
+          </div>
+        </div>
+        </div>
+        <div class="card">
+          <img src="https://pbs.twimg.com/media/DcNIWjmX4AAsRVl?format=jpg&name=large" alt="Profile Image">
+          <div class="card-content">
+            <h2 class="card-title">Calcetin con Rombos Man</h2>
+            <p class="card-description">Elenco 31 Minutos. Deportista. Superhéroe.</p>
+            <div class="button-container">
+                <div class="action-button dislike">DISLIKE</div>
+                <div class="action-button like">  LIKE  </div>
+            </div>
+        </div>
+        </div>
+        <div class="card">
+          <img src="https://www.thesockscloset.cl/cdn/shop/files/Calcetines_largos_collection-min_1800x.jpg?v=1628864654" alt="Profile Image">
+          <div class="card-content">
+            <h2 class="card-title">Calcetines de Flamenco</h2>
+            <p class="card-description">Comodos. Nuevos. Bonitos.</p>
+            <div class="button-container">
+                <div class="action-button dislike">DISLIKE</div>
+                <div class="action-button like">  LIKE  </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
