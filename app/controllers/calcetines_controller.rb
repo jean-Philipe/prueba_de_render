@@ -1,0 +1,2 @@
+class CalcetinesController < ApplicationController
+end

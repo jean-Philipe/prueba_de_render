@@ -1,0 +1,2 @@
+class Calcetin < ApplicationRecord
+end
