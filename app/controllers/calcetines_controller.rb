@@ -1,13 +1,19 @@
 class CalcetinesController < ApplicationController
 
     before_action :authenticate_user!, except: [:index, :show]
-  
+
     def index
-      @calcetines = calcetin.all
+        @calcetines = Calcetin.all
+        @user_calcetines_evaluados = current_user.calcetines_evaluados
+        @calcetines_restantes = @calcetines - @user_calcetines_evaluados
     end
   
     def show
       @calcetin = calcetin.find(params[:id])
+    end
+
+    def liked_calcetines
+        @calcetines_likes = current_user.calcetines_likes # Obtener los calcetines "liked" por el usuario
     end
   
     def new #utilizar cuando el usuario quiera crear un nuevo calcetín. Esto inicia la intancia pero todavia no lo crea. (fatan los datos)
@@ -44,6 +50,7 @@ class CalcetinesController < ApplicationController
       @calcetin.destroy
       redirect_to calcetines_path, notice: 'El calcetín se ha eliminado con éxito.'
     end
+      
   
     private
   
