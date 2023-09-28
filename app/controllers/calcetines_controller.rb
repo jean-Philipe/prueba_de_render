@@ -40,6 +40,8 @@ class CalcetinesController < ApplicationController
   
       if @calcetin.update(calcetin_params)
         redirect_to @calcetin, notice: 'El calcetín se ha actualizado con éxito.'
+        #Esta opción redirigirá al usuario a la página de visualización del calcetín recién creado.
+
       else
         render 'edit' #si ocurre un error se vuelbe a edit 
       end
@@ -55,7 +57,7 @@ class CalcetinesController < ApplicationController
     private
   
     def calcetin_params
-      params.require(:calcetin).permit(:name, :description)
+      params.require(:calcetin).permit(:nombre, :descripcion, :imagen)
     end
   end
   
