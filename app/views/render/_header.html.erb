@@ -6,25 +6,30 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+      
+      <%if user_signed_in? %>
+      
+        <li class="nav-item">
+          <%= link_to "Editar cuenta", edit_user_registration_path, class:"nav-link" %>
+        </li>
+        
+        <li class="nav-item">
+          <%= link_to "Ver perfil", edit_user_registration_path, class:"nav-link" %>
+        </li>
+        
+        <li class="nav-item">
+          <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "nav-link", data: {confirm: '¿Estás seguro de que quieres cerrar sesión?' } %>
+        </li>
 
-      <li class="nav-item">
-        <%= link_to "Iniciar sesión", new_user_session_path, class:"nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Crear cuenta", new_user_registration_path, class:"nav-link" %>
-      </li>
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Likes
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Likes dados</a>
-          <a class="dropdown-item" href="#">Likes recibidos</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+      <%else %> 
+        <li class="nav-item">
+          <%= link_to "Iniciar sesión", new_user_session_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Crear cuenta", new_user_registration_path, class:"nav-link" %>
+        </li>
+      <%end%>
+      
       
     </ul>
     <form class="form-inline my-2 my-lg-0">
