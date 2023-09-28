@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  #cada usuario tiene una lista de calcetines que ya evaluo (puede ser like o no like)
+  has_many :calcetines_evaluados, through: :likes, source: :calcetin
+  has_many :calcetines_likes, -> { where(liked: true) }, through: :likes, source: :calcetin
+
+  #puede dar muchos likes y puede tener muchos calcetines publicados
+  has_many :likes, dependent: :destroy
+  has_many :calcetines, dependent: :destroy
+
+
 end
