@@ -1,2 +1,82 @@
-<h1>MainView#index</h1>
-<p>Find me in app/views/main_view/index.html.erb</p>
+<style>
+        .logo {
+          display: flex;
+          align-items: center;
+          margin:10px;
+         }
+
+        .logo img {
+            height: 80px;   
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100% ;
+        }
+
+        .card {
+            width: 350px;
+            height: 550px;
+            background-color: #0F0E0E;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .img {
+            width: 30;
+            height: 60;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: #111111;
+        }
+
+        .card-description {
+            font-size: 16px;
+            color: #111111;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .action-button {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 6px;
+            color: white;
+            font-size: 25px;
+        }
+
+        .action-button.like {
+            background-color: #4CAF50;
+        }
+
+        .action-button.dislike {
+            background-color: #F44336;
+        }
+      
+    </style>
+<img src="https://pbs.twimg.com/media/DcNIWjmX4AAsRVl?format=jpg&name=large" alt="Profile Image" width="300" height="200">
+<div class="card-content">
+<h2 class="card-title">Calcetin con Rombos Man</h2>
+<p class="card-description">Elenco 31 Minutos. Deportista. Superhéroe.</p>
+<div class="button-container">
+<div class="action-button dislike">DISLIKE</div>
+<div class="action-button like">  LIKE  </div>
