@@ -1,0 +1,28 @@
+<div class="row text-center justify-content-center">
+  <div class="col-md-8">
+    <br>
+    <div class="box">
+      <h1>Nuevo Calcetin</h1>
+
+      <%= form_with(model: @calcetin, url: create_calcetin_path, method: :post, multipart: true) do |form| %>
+
+        <div class="form-group">
+          <%= form.label :nombre %>
+          <%= form.text_area :nombre, rows: 1, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :descripcion %>
+          <%= form.text_area :descripcion, rows: 3, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :foto %>
+          <%= form.file_field :foto, class: "form-control" %>
+        </div>
+
+        <%= form.submit "Crear Calcetin", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
