@@ -1,0 +1,14 @@
+<h1>Resultados de la búsqueda</h1>
+
+<% if @search_results.any? %>
+  <ul>
+    <% @search_results.each do |user| %>
+      <li>
+        <%= link_to user.email, view_user_profile_path(user) %>
+
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No se encontraron resultados.</p>
+<% end %>
