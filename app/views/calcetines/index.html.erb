@@ -1,30 +1,24 @@
-<div class="row text-center justify-content-center">
-  <div class="col-md-8">
-    <br>
-    <div class="box">
-      <h1>Calcetines</h1>
+<div class="container">
+  <h1 class="title">Calcetines</h1>
 
-      <% if @calcetines_restantes.empty? %>
-        <p>No hay calcetines disponibles.</p>
-      <% else %>
-      <br />
-      <div class="card-columns"> <!-- Cambia la clase 'table' por 'card-columns' para crear una cuadrícula de tarjetas -->
-        <% @calcetines_restantes.each do |calcetin| %>
-          <div class="card"> <!-- Cada tarjeta -->
-            <div class="card-body"> <!-- Contenido de la tarjeta -->
-              <h5 class="card-title"><%= calcetin.nombre %></h5> <!-- Título de la tarjeta -->
-              <p class="card-text"><%= calcetin.descripcion %></p> <!-- Descripción de la tarjeta -->
-              <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín" width="90" height="70">
-
+  <div class="columns is-multiline is-variable is-4 card-container">
+    <% @calcetines_restantes.each do |calcetin| %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín" width="180" height="200">
+            <p class="title"><%= calcetin.nombre %></p>
+            <p class="subtitle"><%= calcetin.descripcion %></p>
+          </div>
+          <div class="card-footer">
+            <div class="card-buttons">
+              <%= link_to "Editar", editar_calcetine_path(calcetin), class: "btn btn-warning" %>
+              <%= link_to "Eliminar", eliminar_calcetine_path(calcetin), method: :delete, data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" }, class: "btn btn-danger" %>
+              <%= link_to "Like", editar_calcetine_path(calcetin), class: "btn btn-success" %>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-      <% end %>
-
-      <% if user_signed_in? %>
-      <%= link_to "Nuevo calcetin", new_calcetin_path, class: "btn btn-primary" %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
