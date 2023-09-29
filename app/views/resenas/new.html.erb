@@ -1,0 +1,16 @@
+<%= form_with(model: @resena, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :puntuacion %>
+      <%= form.number_field :puntuacion, min: 1, max: 5 %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :comentario %>
+      <%= form.text_area :comentario %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Crear Reseña", class: "button is-primary" %>
+    </div>
+  <% end %>
+  

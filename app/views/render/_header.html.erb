@@ -33,6 +33,12 @@
           <%= button_to "Calcetines disponibles", calcetines_path, class: "nav-link" %>
         </li>
 
+        <%= link_to "Mis Reseñas", mis_resenas_path, class: "nav-link" %>
+
+
+        <%= link_to "Crear Reseña", new_resena_path, class: "button is-primary" %>
+
+
       <%else %> 
         <li class="nav-item">
           <%= link_to "Iniciar sesión", new_user_session_path, class:"nav-link" %>
