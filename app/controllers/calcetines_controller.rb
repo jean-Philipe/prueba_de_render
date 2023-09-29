@@ -54,7 +54,21 @@ class CalcetinesController < ApplicationController
         @calcetin.foto = @cloudinary_response['secure_url']
         puts "URL de la foto en @calcetin.foto: #{@calcetin.foto}"
       
+      
+      
+      else
+
+        @cloudinary_response = Cloudinary::Uploader.upload("https://us.123rf.com/450wm/yehorlisnyi/yehorlisnyi2104/yehorlisnyi210400016/167492439-sin-foto-o-icono-de-imagen-en-blanco-cargando-im%C3%A1genes-o-marca-de-imagen-faltante-imagen-no.jpg")
+        calcetin_params[:foto] = @cloudinary_response['secure_url'] 
+
+        @calcetin = Calcetin.new(calcetin_params)
+    
+        @calcetin.usuario = current_user
+    
+        @calcetin.foto = @cloudinary_response['secure_url']
+
       end
+
 
       if @calcetin.save
         redirect_to calcetines_path, notice: 'El calcetín se ha creado con éxito.'
