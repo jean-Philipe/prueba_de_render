@@ -1,0 +1,11 @@
+development: 
+  cloud_name: "drqn5ofg0"
+  api_key: "379166491736184"
+  api_secret: "BYucFFrY9OKbmKQ1LrKAdlHQKDM"
+  
+  
+
+production:
+  cloud_name: "drqn5ofg0"
+  api_key: "379166491736184"
+  api_secret: "BYucFFrY9OKbmKQ1LrKAdlHQKDM"
