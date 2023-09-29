@@ -4,6 +4,7 @@ class LikesController < ApplicationController
   
     # Un usuario evalua a un calcetín
     def create
+      puts "estoy en create"
       @calcetin = Calcetin.find(params[:id_calcetin])
       liked = params[:liked] == 'true' # Convierte el parámetro liked en un booleano
   

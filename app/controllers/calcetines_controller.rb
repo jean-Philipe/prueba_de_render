@@ -80,14 +80,18 @@ class CalcetinesController < ApplicationController
     
   
     def edit #se abre el formulario para editar pero aun no se edita
-      @calcetin = current_user.calcetines.find(params[:id])
+      @calcetin = Calcetin.find(params[:id])
     end
   
     def update #ahora si se edita y actualiza
-      @calcetin = current_user.calcetines.find(params[:id])
+      @calcetin = Calcetin.find(params[:id])
+
+      puts "los nuevos datos son:"
+
+      puts calcetin_params
   
       if @calcetin.update(calcetin_params)
-        redirect_to @calcetin, notice: 'El calcetín se ha actualizado con éxito.'
+        redirect_to calcetines_path, notice: 'El calcetín se ha actualizado con éxito.'
         #Esta opción redirigirá al usuario a la página de visualización del calcetín recién creado.
 
       else
@@ -96,7 +100,7 @@ class CalcetinesController < ApplicationController
     end
   
     def destroy
-      @calcetin = current_user.calcetines.find(params[:id])
+      @calcetin = Calcetin.find(params[:id])
       @calcetin.destroy
       redirect_to calcetines_path, notice: 'El calcetín se ha eliminado con éxito.'
     end

@@ -2,6 +2,6 @@
 <p>Correo de usuario: <%= current_user.email %></p>
 <p>Nombre de usuario: <%= current_user.first_name %></p>
 <p>Apellido de usuario: <%= current_user.last_name %></p>
-<p>Foto: <%= current_user.profile_picture %></p>
-<p>Descripcion: <%= current_user.description %></p>
-
+<p>Foto de perfil:</p>
+<%= image_tag current_user.profile_picture, alt: "Imagen de perfil", width: "150", height: "150" if current_user.profile_picture.present? %>
+<p>Descripción: <%= current_user.description %></p>
