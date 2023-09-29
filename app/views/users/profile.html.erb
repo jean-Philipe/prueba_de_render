@@ -1,9 +1,8 @@
-<h1>Mi perfil</h1>
-<p>Correo de usuario: <%= current_user.email %></p>
-<p>Nombre de usuario: <%= current_user.first_name %></p>
-<p>Apellido de usuario: <%= current_user.last_name %></p>
-<p>Foto: <%= current_user.profile_picture %></p>
-<p>Descripcion: <%= current_user.description %></p>
-
-
-
+<h2>Calcetines Creados por Mí</h2>
+<% if current_user.calcetines.any? %>
+  <ul>
+    <% current_user.calcetines.each do |calcetin| %>
+      <li><%= calcetin.nombre %></li>
+    <% end %>
+  </ul>
+<% end %>

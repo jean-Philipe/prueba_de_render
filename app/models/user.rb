@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :resenas, dependent: :destroy
 
   has_one_attached :profile_picture
+  has_many :calcetines, foreign_key: 'usuario_id', dependent: :destroy
 
   
 end

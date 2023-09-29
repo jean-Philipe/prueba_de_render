@@ -16,22 +16,23 @@ class CalcetinesController < ApplicationController
         @calcetines_likes = current_user.calcetines_likes # Obtener los calcetines "liked" por el usuario
     end
   
-    def new #utilizar cuando el usuario quiera crear un nuevo calcetín. Esto inicia la intancia pero todavia no lo crea. (fatan los datos)
+    def new
       @calcetin = Calcetin.new
     end
-  
-    def create #aca ya se recibieron los datos y ahora si se crea el calcetín
-
+    
+    def create
       @calcetin = Calcetin.new(calcetin_params)
       @calcetin.usuario = current_user
-  
+      
+    
       if @calcetin.save
         redirect_to calcetines_path, notice: 'El calcetín se ha creado con éxito.'
       else
         puts @calcetin.errors.full_messages
-        render 'new' #como hay errores se vuelve a la funcion new que deberia mostrar un formulario para que el usuario vuelva a ingresar los datos
+        render 'new'
       end
     end
+    
   
     def edit #se abre el formulario para editar pero aun no se edita
       @calcetin = current_user.calcetines.find(params[:id])
