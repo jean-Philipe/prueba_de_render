@@ -21,10 +21,41 @@ class CalcetinesController < ApplicationController
     end
     
     def create
-      @calcetin = Calcetin.new(calcetin_params)
-      @calcetin.usuario = current_user
-      
+
+      calcetin_params = params.require(:calcetin).permit(:nombre, :descripcion, :foto)
+  
+      if params[:calcetin][:foto].present?
+        uploaded_file = params[:calcetin][:foto].tempfile
+        
+        @cloudinary_response = Cloudinary::Uploader.upload(uploaded_file, resource_type: :auto)
+
+        puts "esperando respuesta"
+
+        if @cloudinary_response['secure_url'].present?
+          # Si @cloudinary_response['secure_url'] está presente, significa que la carga fue exitosa.
+          # Puedes imprimirlo para verificar.
+          puts "URL segura de la imagen: #{@cloudinary_response['secure_url']}"
+        else
+          # Si @cloudinary_response['secure_url'] está en blanco, puede indicar un problema en la carga.
+          # Puedes imprimir un mensaje de error o realizar otras acciones de manejo de errores aquí.
+          puts "La carga de la imagen falló."
+        end
+
+
+        calcetin_params[:foto] = @cloudinary_response['secure_url'] 
+
+        puts calcetin_params
+
+        @calcetin = Calcetin.new(calcetin_params)
     
+        @calcetin.usuario = current_user
+
+    
+        @calcetin.foto = @cloudinary_response['secure_url']
+        puts "URL de la foto en @calcetin.foto: #{@calcetin.foto}"
+      
+      end
+
       if @calcetin.save
         redirect_to calcetines_path, notice: 'El calcetín se ha creado con éxito.'
       else
@@ -60,7 +91,7 @@ class CalcetinesController < ApplicationController
     private
   
     def calcetin_params
-      params.require(:calcetin).permit(:nombre, :descripcion, :imagen)
+      params.require(:calcetin).permit(:nombre, :descripcion, :foto)
     end
   end
   

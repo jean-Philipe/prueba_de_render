@@ -16,9 +16,9 @@
           <%= form.text_area :descripcion, rows: 3, class: "form-control" %>
         </div>
 
-        <div class="form-group">
-          <%= form.label :foto %>
-          <%= form.file_field :foto, class: "form-control" %>
+        <div class="field">
+        <%= form.label :foto, 'Imagen del calcetín' %>
+        <%= form.file_field :foto, accept: 'image/*' %>
         </div>
 
         <%= form.submit "Crear Calcetin", class: "btn btn-primary" %>
