@@ -13,6 +13,5 @@ class User < ApplicationRecord
   has_many :calcetines_likes, -> { where(liked: true) }, through: :likes, source: :calcetin
   has_many :resenas, dependent: :destroy
 
-
-
+  has_one_attached :profile_picture
 end

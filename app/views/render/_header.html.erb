@@ -22,15 +22,11 @@
         </li>
 
         <li class="nav-item">
-          <%= button_to "Crear calcetines", calcetines_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
           <%= button_to "Calcetines like", likes_path, class: "nav-link" %>
         </li>
 
         <li class="nav-item">
-          <%= button_to "Calcetines disponibles", calcetines_path, class: "nav-link" %>
+          <%= button_to "Calcetines disponibles", calcetines_path, method: :get, class: "nav-link" %>
         </li>
 
         <%= link_to "Mis Reseñas", mis_resenas_path, class: "nav-link" %>
@@ -50,9 +46,11 @@
       
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Usuario" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar usuario</button>
-    </form>
+    <%= form_tag(user_search_path, method: :get) do %>
+      <label for="query">Buscar usuarios:</label>
+      <%= text_field_tag :query %>
+      <%= submit_tag 'Buscar' %>
+    <% end %>
+
   </div>
 </nav>
