@@ -1,0 +1,21 @@
+<h1>Calcetines que te gustan</h1>
+
+<% if @calcetines_likes.present? && !@calcetines_likes.empty? %>
+    <div class="row">
+    <% @calcetines_likes.each do |calcetin| %>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="<%= calcetin.foto.url %>" alt="<%= calcetin.nombre %>" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><%= calcetin.nombre %></h5>
+            <p class="card-text"><%= calcetin.descripcion %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<% else %>
+  <p>No tienes ningún calcetín que te guste.</p>
+  
+<% end %>

@@ -23,6 +23,11 @@ class LikesController < ApplicationController
         redirect_to @calcetin
       end
     end
+
+    def index 
+      @likes = current_user.calcetines_likes
+      render 'index'
+    end 
   
     # Un usuario elimina su like
     def destroy
