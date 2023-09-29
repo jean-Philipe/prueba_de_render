@@ -1,0 +1,33 @@
+<div class="row text-center justify-content-center">
+  <div class="col-md-8">
+    <br>
+    <div class="box">
+      <h1>Calcetines</h1>
+ 
+      <% if @calcetines_restantes.empty? %>
+        <p>No hay calcetines disponibles.</p>
+      <% else %>
+      <br />
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripcion</th>
+              <th>Foto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @calcetines_restantes.each do |calcetin| %>
+              <tr>
+                <td><%= calcetin.nombre %></td>
+                <td><%= calcetin.descripcion %></td>
+                <td><%= calcetin.foto %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+
