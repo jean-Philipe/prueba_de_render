@@ -22,15 +22,11 @@
         </li>
 
         <li class="nav-item">
-          <%= button_to "Crear calcetines", calcetines_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
           <%= button_to "Calcetines like", likes_path, class: "nav-link" %>
         </li>
 
         <li class="nav-item">
-          <%= button_to "Calcetines disponibles", calcetines_path, class: "nav-link" %>
+          <%= button_to "Calcetines disponibles", calcetines_path, method: :get, class: "nav-link" %>
         </li>
 
       <%else %> 
