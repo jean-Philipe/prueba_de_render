@@ -4,19 +4,18 @@ Rails.application.routes.draw do
 
 
 
-  devise_for :users
+  #devise_for :users
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
   
-  resources :calcetines, only: [:index, :create]
 
 
 
   post '/likes', to: 'likes#index'
 
-  get '/calcetines', to: 'calcetines#index', as: 'calcetines'
+  get 'calcetines', to: 'calcetines#index', as: 'calcetines'
   get 'nuevo_calcetin', to: 'calcetines#new', as: 'new_calcetin'
-  post 'create_calcetin', to: 'calcetines#create'
+  post 'calcetines', to: 'calcetines#create'
   
 
 
@@ -25,9 +24,7 @@ Rails.application.routes.draw do
   root 'main_view#index'
 
 
-  get '/calcetines', to: 'calcetines#index'
-  
-  post '/calcetines', to: 'calcetines#create'
+
 
 
   get 'users/profile', to: 'users#profile', as: 'user_profile'
