@@ -1,24 +1,52 @@
+/* Estilo para el contenedor de las tarjetas */
+.card-container {
+    display: grid; /* Mostrar como cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ancho mínimo de 300px, ajustar automáticamente al ancho del contenedor */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centrar las tarjetas horizontalmente */
+}
+
 /* Estilo para las tarjetas en el catálogo */
 .card {
-    width: 200px; /* Ancho deseado */
-    height: 200px; /* Alto deseado */
-    margin: 10px; /* Margen exterior para separar las tarjetas */
-    /* Agrega más estilos según tus preferencias, como fondo, borde, etc. */
-  }
-  
-  /* Estilo para el contenido de la tarjeta */
-  .card-content {
+    width: 100%; /* Ancho del 100% para llenar el contenedor */
+    height: 180px; /* Alto deseado */
+    border: 1px solid #ddd; /* Borde para las tarjetas */
+    border-radius: 20px;
+    background-color: #fff; /* Color de fondo de las tarjetas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para las tarjetas */
+    padding: 10px; /* Espaciado interior de las tarjetas */
+    transition: transform 0.3s ease-in-out; /* Transición suave al pasar el mouse sobre las tarjetas */
+}
+
+/* Estilo para el contenido de la tarjeta */
+.card-content {
     padding: 1rem; /* Espaciado interior del contenido */
-  }
-  
-  /* Estilo para el título y subtítulo */
-  .title, .subtitle {
+}
+
+/* Estilo para el título y subtítulo */
+.title, .subtitle {
     font-size: 1.25rem; /* Tamaño de fuente del título y subtítulo */
-  }
-  
-  /* Estilo para el pie de la tarjeta (footer) */
-  .card-footer {
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilo para la descripción */
+.description {
+    font-style: italic; /* Cursiva */
+    font-size: 1rem; /* Tamaño de fuente de la descripción */
+}
+
+/* Estilo para el pie de la tarjeta (footer) */
+.card-footer {
     background-color: #f5f5f5; /* Color de fondo del pie */
     padding: 0.5rem; /* Espaciado interior del pie */
-  }
-  
+}
+
+/* Estilo de la sombra al pasar el mouse sobre las tarjetas */
+.card:hover {
+    transform: translateY(-4px); /* Efecto de levantar la tarjeta al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+}
+
+.seba { 
+    color: #11111;
+}

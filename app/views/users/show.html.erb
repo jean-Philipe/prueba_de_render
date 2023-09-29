@@ -4,7 +4,9 @@
 <p>Nombre de usuario: <%= @user.first_name %></p>
 <p>Apellido de usuario: <%= @user.last_name %></p>
 <p>Foto: <%= @user.profile_picture %></p>
-<p>Descripcion: <%= @user.description %></p>
+<p>Descripcion: <%= @user.id %></p>
 
-<%= link_to "Crear Reseña", new_resena_path, class: "button is-primary" %>
+<%= link_to "Crear Reseña", new_resena_path(user_id: @user.id), class: "button is-primary" %>
+
+
 
