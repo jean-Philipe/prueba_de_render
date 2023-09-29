@@ -1,18 +1,27 @@
 Rails.application.routes.draw do
-  resources :likes, only: [:index] # Define la ruta para la acción 'index' de Likes.
+  resources :likes, only: [:index, :create] # Define la ruta para la acción 'index' de Likes.
 
   resources :resenas, only: [:index, :new, :create]
 
   resources :calcetines do
     member do
       get 'editar' # Ruta y acción para editar un calcetín individual
-      delete 'eliminar' # Ruta y acción para eliminar un calcetín individual
+      #delete 'eliminar', to: 'calcetines#destroy' # Ruta y acción para eliminar un calcetín individual
     end
   end
+  
 
   post '/likes', to: 'likes#index'
 
   get 'nuevo_calcetin', to: 'calcetines#new', as: 'new_calcetin'
+
+  # Ruta para la actualización (ejecutada al enviar el formulario de edición)
+
+  patch 'calcetines/:id', to: 'calcetines#update', as: 'update_calcetin'
+  get '/calcetines/:id/eliminar', to: 'calcetines#destroy', as: 'destroy_calcetin'
+
+
+
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
 

@@ -12,9 +12,9 @@
           </div>
           <div class="card-footer">
             <div class="card-buttons">
-              <%= link_to "Editar", editar_calcetine_path(calcetin), class: "btn btn-warning" %>
-              <%= link_to "Eliminar", eliminar_calcetine_path(calcetin), method: :delete, data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" }, class: "btn btn-danger" %>
-              <%= link_to "Like", editar_calcetine_path(calcetin), class: "btn btn-success" %>
+              <%= link_to "Editar", edit_calcetine_path(calcetin), method: :patch, class: "btn btn-warning" %>
+              <%= link_to "Eliminar", destroy_calcetin_path(calcetin), method: :delete, class: "btn btn-danger", data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" } %>
+              <%= link_to "Like", likes_path(calcetin_id: calcetin.id), method: :post, class: "btn btn-success" %>
             </div>
           </div>
         </div>
