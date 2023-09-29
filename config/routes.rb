@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   root 'main_view#index'
 
-
+  get '/calcetines', to: 'calcetines#index'
+  post '/calcetines', to: 'calcetines#create'
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
