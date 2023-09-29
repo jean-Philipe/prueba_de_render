@@ -1,15 +1,15 @@
 <div class="container">
   <h1 class="title">Mis Reseñas</h1>
-  
-  <div class="columns">
+
+  <div class="columns is-multiline"> <!-- Agregamos la clase is-multiline para que las tarjetas se envuelvan automáticamente en filas -->
     <% @resenas.each do |resena| %>
       <div class="column is-one-third">
         <div class="card">
           <div class="card-content">
+            <p class="title">Puntuación: <%= resena.puntuacion %></p>
+            <p class="subtitle">Autor: <%= resena.user.first_name %> <%= resena.user.last_name %></p>
             <p><%= resena.comentario %></p>
           </div>
-          <footer class="card-footer">
-          </footer>
         </div>
       </div>
     <% end %>
