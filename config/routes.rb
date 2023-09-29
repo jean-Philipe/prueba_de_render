@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   resources :resenas, only: [:index, :new, :create]
 
 
-
-
-  #devise_for :users
-
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 
@@ -26,9 +22,6 @@ Rails.application.routes.draw do
 
 
   get '/mis_resenas', to: 'resenas#index', as: 'mis_resenas'
-
-  get 'users/profile', to: 'users#profile', as: 'user_profile'
-
 
   get 'users/profile', to: 'users#profile', as: 'user_profile'
 
