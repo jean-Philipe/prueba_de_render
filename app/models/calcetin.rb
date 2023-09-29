@@ -9,6 +9,6 @@ class Calcetin < ApplicationRecord
     validates :nombre, presence: true
     validates :descripcion, presence: true
 
-    attr_accessor :foto
+    
 
 end
