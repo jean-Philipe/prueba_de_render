@@ -6,5 +6,5 @@ class Like < ApplicationRecord
     belongs_to :calcetin, foreign_key: "id_calcetin" #con calcetin.id_user podemos sacar el usuario likeado
 
     #se valida que el usuario solo pueda dar un like a cada celcetín y no multiples likes. 
-    validates :user_id, uniqueness: { scope: :calcetin_id }
+    validates :id_usuario_like, uniqueness: { scope: :id_calcetin }
 end
