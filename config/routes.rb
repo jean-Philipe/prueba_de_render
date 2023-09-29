@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   root 'main_view#index'
 
+  # config/routes.rb
+  get 'users/profile', to: 'users#profile', as: 'user_profile'
+
+
 
 
 
