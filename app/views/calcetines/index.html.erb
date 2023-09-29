@@ -3,35 +3,26 @@
     <br>
     <div class="box">
       <h1>Calcetines</h1>
- 
+
       <% if @calcetines_restantes.empty? %>
         <p>No hay calcetines disponibles.</p>
       <% else %>
       <br />
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Descripcion</th>
-              <th>Foto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @calcetines_restantes.each do |calcetin| %>
-              <tr>
-                <td><%= calcetin.nombre %></td>
-                <td><%= calcetin.descripcion %></td>
-                <td><%= calcetin.foto %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <div class="card-columns"> <!-- Cambia la clase 'table' por 'card-columns' para crear una cuadrícula de tarjetas -->
+        <% @calcetines_restantes.each do |calcetin| %>
+          <div class="card"> <!-- Cada tarjeta -->
+            <div class="card-body"> <!-- Contenido de la tarjeta -->
+              <h5 class="card-title"><%= calcetin.nombre %></h5> <!-- Título de la tarjeta -->
+              <p class="card-text"><%= calcetin.descripcion %></p> <!-- Descripción de la tarjeta -->
+            </div>
+          </div>
+        <% end %>
+      </div>
       <% end %>
-      
+
       <% if user_signed_in? %>
       <%= link_to "Nuevo calcetin", new_calcetin_path, class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
 </div>
-

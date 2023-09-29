@@ -14,23 +14,18 @@
         </li>
         
         <li class="nav-item">
-          <%= link_to "Mi perfil", user_profile_path(current_user) %>
-        </li>
-        
-        <li class="nav-item">
-          <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "nav-link", data: {confirm: '¿Estás seguro de que quieres cerrar sesión?' } %>
+          <%= link_to "Mi perfil", user_profile_path(current_user), class:"nav-link" %>
         </li>
 
         <li class="nav-item">
-          <%= button_to "Calcetines like", likes_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= button_to "Calcetines disponibles", calcetines_path, method: :get, class: "nav-link" %>
+          <%= link_to "Calcetines like", likes_path, class: "nav-link" %>
         </li>
 
         <%= link_to "Mis Reseñas", mis_resenas_path, class: "nav-link" %>
 
+        <li class="nav-item">
+          <%= link_to "Catálogo", calcetines_path, method: :get, class: "nav-link" %>
+        </li>
 
         
 
@@ -51,6 +46,8 @@
       <%= text_field_tag :query %>
       <%= submit_tag 'Buscar' %>
     <% end %>
+    <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, data: {confirm: '¿Estás seguro de que quieres cerrar sesión?' } %>
+
 
   </div>
 </nav>

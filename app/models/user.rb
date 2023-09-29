@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #puede dar muchos likes y puede tener muchos calcetines publicados
-  has_many :likes, foreign_key: "id_usuario_like", dependent: :destroy
-  has_many :calcetines, dependent: :destroy
+  has_many :likes, foreign_key: 'id_usuario_like', dependent: :destroy
+  has_many :calcetines_likes, through: :likes, source: :calcetin
 
   #cada usuario tiene una lista de calcetines que ya evaluo (puede ser like o no like)
   has_many :calcetines_evaluados, through: :likes, source: :calcetin
@@ -14,4 +14,6 @@ class User < ApplicationRecord
   has_many :resenas, dependent: :destroy
 
   has_one_attached :profile_picture
+
+  
 end
