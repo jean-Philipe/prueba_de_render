@@ -27,6 +27,10 @@
           </tbody>
         </table>
       <% end %>
+      
+      <% if user_signed_in? %>
+      <%= link_to "Nuevo calcetin", new_calcetin_path, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

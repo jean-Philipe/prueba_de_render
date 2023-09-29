@@ -17,16 +17,18 @@ class CalcetinesController < ApplicationController
     end
   
     def new #utilizar cuando el usuario quiera crear un nuevo calcetín. Esto inicia la intancia pero todavia no lo crea. (fatan los datos)
-      @calcetin = current_user.calcetines.build
+      @calcetin = Calcetin.new
     end
   
     def create #aca ya se recibieron los datos y ahora si se crea el calcetín
 
-      @calcetin = current_user.calcetines.build(calcetin_params)
+      @calcetin = Calcetin.new(calcetin_params)
+      @calcetin.usuario = current_user
   
       if @calcetin.save
-        redirect_to @calcetin, notice: 'El calcetín se ha creado con éxito.'
+        redirect_to calcetines_path, notice: 'El calcetín se ha creado con éxito.'
       else
+        puts @calcetin.errors.full_messages
         render 'new' #como hay errores se vuelve a la funcion new que deberia mostrar un formulario para que el usuario vuelva a ingresar los datos
       end
     end
