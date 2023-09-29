@@ -5,7 +5,7 @@ class LikesController < ApplicationController
     # Un usuario evalua a un calcetín
     def create
       puts "estoy en create"
-      @calcetin = Calcetin.find(params[:id_calcetin])
+      @calcetin = Calcetin.find(params[:id])
       liked = params[:liked] == 'true' # Convierte el parámetro liked en un booleano
   
       @like = current_user.likes.build(
@@ -17,16 +17,18 @@ class LikesController < ApplicationController
       if @like.save
         # Actualiza la lista de calcetines_evaluados
         current_user.calcetines_evaluados << @calcetin unless current_user.calcetines_evaluados.include?(@calcetin)
+        @calcetines_evaluados = current_user.calcetines_evaluados
+
         flash[:success] = "Has evaluado al calcetín."
-        redirect_to @calcetin
+        redirect_to likes_path
       else
         flash[:error] = "No se pudo evaluar al calcetín."
-        redirect_to @calcetin
+        redirect_to likes_path
       end
     end
 
     def index 
-      @likes = current_user.calcetines_likes
+      @likes = current_user.calcetines_evaluados
       render 'index'
     end 
   

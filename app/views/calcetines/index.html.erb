@@ -14,11 +14,14 @@
             <div class="card-buttons">
               <%= link_to "Editar", edit_calcetine_path(calcetin), method: :patch, class: "btn btn-warning" %>
               <%= link_to "Eliminar", destroy_calcetin_path(calcetin), method: :delete, class: "btn btn-danger", data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" } %>
-              <%= link_to "Like", likes_path(calcetin_id: calcetin.id), method: :post, class: "btn btn-success" %>
+              <%= link_to "Like", new_calcetin_like_path(calcetin), method: :post, class: "btn btn-success" %>
             </div>
           </div>
         </div>
       </div>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "Nuevo calcetin", new_calcetin_path, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

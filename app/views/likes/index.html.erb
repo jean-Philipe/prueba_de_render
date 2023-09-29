@@ -1,21 +1,18 @@
-<h1>Calcetines que te gustan</h1>
 
-<% if @calcetines_likes.present? && !@calcetines_likes.empty? %>
-    <div class="row">
-    <% @calcetines_likes.each do |calcetin| %>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <img src="<%= calcetin.foto.url %>" alt="<%= calcetin.nombre %>" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title"><%= calcetin.nombre %></h5>
-            <p class="card-text"><%= calcetin.descripcion %></p>
+<div class="container">
+  <h1 class="title">Calcetines con mi like</h1>
+
+  <div class="columns is-multiline is-variable is-4 card-container">
+    <% @likes.each do |like| %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <img src="<%= like.foto %>" alt="Imagen de Calcetín" width="180" height="200">
+            <p class="title"><%= like.nombre %></p>
+            <p class="subtitle"><%= like.descripcion %></p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
-<% else %>
-  <p>No tienes ningún calcetín que te guste.</p>
-  
-<% end %>
+</div>
