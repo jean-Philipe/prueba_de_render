@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="title">Mis Reseñas</h1>
+  
+  <div class="columns">
+    <% @resenas.each do |resena| %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <p><%= resena.comentario %></p>
+          </div>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item">Editar</a>
+            <a href="#" class="card-footer-item">Eliminar</a>
+          </footer>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

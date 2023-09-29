@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
   resources :likes, only: [:index] # Define la ruta para la acción 'index' de Likes.
 
+  resources :resenas, only: [:index, :new, :create]
+
+
 
 
   #devise_for :users
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  
-
 
 
   post '/likes', to: 'likes#index'
@@ -24,7 +25,9 @@ Rails.application.routes.draw do
   root 'main_view#index'
 
 
+  get '/mis_resenas', to: 'resenas#index', as: 'mis_resenas'
 
+  get 'users/profile', to: 'users#profile', as: 'user_profile'
 
 
   get 'users/profile', to: 'users#profile', as: 'user_profile'
