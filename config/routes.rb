@@ -1,11 +1,24 @@
 Rails.application.routes.draw do
 
   resources :likes, only: [:index] # Define la ruta para la acción 'index' de Likes.
+
+
+
+  devise_for :users
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  
   resources :calcetines, only: [:index, :create]
 
+
+
   post '/likes', to: 'likes#index'
-  post '/calcetines', to: 'calcetines#index'
+
+  get '/calcetines', to: 'calcetines#index', as: 'calcetines'
+  get 'nuevo_calcetin', to: 'calcetines#new', as: 'new_calcetin'
+  post 'create_calcetin', to: 'calcetines#create'
+  
+
 
   get 'main_view/index'
 
