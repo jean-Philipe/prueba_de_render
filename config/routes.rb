@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :likes, only: [:index, :create] # Define la ruta para la acción 'index' de Likes.
+  resources :likes, only: [:index] # Define la ruta para la acción 'index' de Likes.
+
+  get 'likes/new', to: 'likes#create', as: 'new_like'
 
   resources :resenas, only: [:index, :new, :create]
 
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
 
   patch 'calcetines/:id', to: 'calcetines#update', as: 'update_calcetin'
   get '/calcetines/:id/eliminar', to: 'calcetines#destroy', as: 'destroy_calcetin'
+
+  get '/calcetines/:id/likes', to: 'likes#create', as: 'new_calcetin_like'
 
 
 

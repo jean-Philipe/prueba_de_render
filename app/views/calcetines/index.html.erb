@@ -2,21 +2,20 @@
   <div class="container">
     <h1 class="title text-center text-white">Calcetines</h1>
 
-    <div class="row justify-content-center">
-      <% @calcetines_restantes.each do |calcetin| %>
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín" class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title text-center"><%= calcetin.nombre %></h5>
-              <p class="card-text text-center"><%= calcetin.descripcion %></p>
-            </div>
-            <div class="card-footer">
-              <div class="btn-group d-flex justify-content-center">
-                <%= link_to "Editar", edit_calcetine_path(calcetin), method: :patch, class: "btn btn-warning mr-2" %>
-                <%= link_to "Eliminar", destroy_calcetin_path(calcetin), method: :delete, class: "btn btn-danger mr-2", data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" } %>
-                <%= link_to "Like", likes_path(calcetin_id: calcetin.id), method: :post, class: "btn btn-success" %>
-              </div>
+  <div class="columns is-multiline is-variable is-4 card-container">
+    <% @calcetines_restantes.each do |calcetin| %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín" width="180" height="200">
+            <p class="title"><%= calcetin.nombre %></p>
+            <p class="subtitle"><%= calcetin.descripcion %></p>
+          </div>
+          <div class="card-footer">
+            <div class="card-buttons">
+              <%= link_to "Editar", edit_calcetine_path(calcetin), method: :patch, class: "btn btn-warning" %>
+              <%= link_to "Eliminar", destroy_calcetin_path(calcetin), method: :delete, class: "btn btn-danger", data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" } %>
+              <%= link_to "Like", new_calcetin_like_path(calcetin), method: :post, class: "btn btn-success" %>
             </div>
           </div>
         </div>
@@ -27,6 +26,9 @@
       <div class="text-center">
         <%= link_to "Nuevo Calcetín", new_calcetin_path, class: "btn btn-primary btn-lg" %>
       </div>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to "Nuevo calcetin", new_calcetin_path, class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
