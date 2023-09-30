@@ -6,49 +6,40 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      
-      <%if user_signed_in? %>
-      
+      <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to "Editar cuenta", edit_user_registration_path, class:"nav-link" %>
         </li>
-        
         <li class="nav-item">
           <%= link_to "Mi perfil", user_profile_path(current_user), class:"nav-link" %>
         </li>
-
         <li class="nav-item">
 
           <%= link_to "Calcetines like", likes_path, class: "nav-link" %>
         </li>
-
         <%= link_to "Mis Reseñas", mis_resenas_path, class: "nav-link" %>
-
         <li class="nav-item">
           <%= link_to "Catálogo", calcetines_path, method: :get, class: "nav-link" %>
         </li>
-
-        
-
-
-      <%else %> 
+      <% else %> 
         <li class="nav-item">
           <%= link_to "Iniciar sesión", new_user_session_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Crear cuenta", new_user_registration_path, class:"nav-link" %>
         </li>
-      <%end%>
-      
-      
+      <% end %>
     </ul>
-    <%= form_tag(user_search_path, method: :get) do %>
-      <label for="query">Buscar usuarios:</label>
-      <%= text_field_tag :query %>
-      <%= submit_tag 'Buscar' %>
+    <%= form_tag(user_search_path, method: :get, class: "form-inline my-2 my-lg-0") do %>
+      <%= text_field_tag :query, nil, class: "form-control mr-sm-2", placeholder: "Buscar personas por email :)" %>
+      <%= submit_tag 'Buscar', class: "btn btn-outline-success my-2 my-sm-0" %>
     <% end %>
-    <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, data: {confirm: '¿Estás seguro de que quieres cerrar sesión?' } %>
-
-
+    
+    <%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, data: { confirm: '¿Estás seguro de que quieres cerrar sesión?' }, class: "btn btn-danger ml-2" %>
+    <% if user_signed_in? %>
+      <span class="navbar-text ml-2">
+        Bienvenid@, <%= current_user.first_name %>!!
+      </span>
+    <% end %>
   </div>
 </nav>

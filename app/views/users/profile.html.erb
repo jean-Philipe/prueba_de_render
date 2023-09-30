@@ -1,7 +1,73 @@
-<h1>Mi perfil</h1>
-<p>Correo de usuario: <%= current_user.email %></p>
-<p>Nombre de usuario: <%= current_user.first_name %></p>
-<p>Apellido de usuario: <%= current_user.last_name %></p>
-<p>Foto de perfil:</p>
-<%= image_tag current_user.profile_picture, alt: "Imagen de perfil", width: "150", height: "150" if current_user.profile_picture.present? %>
-<p>Descripción: <%= current_user.description %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://imagenes.elpais.com/resizer/POMntYajOsrQiIQTJQ147UIn7QI=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/G7D7UEHJCZ4GBPJFLOWM5BNH2I.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .profile-container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      width: 90%; /* Ajusta el ancho de la ventana */
+      max-width: 800px; /* Establece un ancho máximo */
+    }
+
+    .profile-content {
+      display: flex;
+      flex-direction: row; /* Coloca la foto y el texto en fila */
+      align-items: flex-start; /* Alinea la parte superior de la foto y el texto */
+    }
+
+    .profile-image img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-right: 20px; /* Espacio entre la foto y el texto */
+    }
+
+    .profile-text {
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile-container">
+      <div class="profile-content">
+        <div class="profile-image">
+          <%= image_tag current_user.profile_picture, alt: "Imagen de perfil" if current_user.profile_picture.present? %>
+        </div>
+        <div>
+          <h1>Mi perfil</h1>
+          <p><strong>Correo de usuario:</strong> <%= current_user.email %></p>
+          <p><strong>Nombre de usuario:</strong> <%= current_user.first_name %></p>
+          <p><strong>Apellido de usuario:</strong> <%= current_user.last_name %></p>
+          <p><strong>Descripción:</strong> <%= current_user.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
