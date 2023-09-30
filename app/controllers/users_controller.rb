@@ -3,10 +3,6 @@ class UsersController < ApplicationController
         # Lógica opcional para cargar datos del perfil
         render 'profile'
     end
-    def show
-        @user = User.find(params[:id])
-    end
-   
     def search
         query = params[:query]
 
@@ -14,4 +10,14 @@ class UsersController < ApplicationController
         # con el criterio de búsqueda
         @search_results = User.where("email LIKE ?", "%#{query}%")
     end
+    def show
+        if params[:id] == "sign_out"
+          # Realiza acciones específicas para cerrar sesión, como eliminar la sesión actual, etc.
+          sign_out(current_user) # Este es un ejemplo de cómo cerrar sesión con Devise.
+          redirect_to root_path, notice: "Has cerrado sesión exitosamente."
+        else
+          @user = User.find(params[:id])
+        end
+      end
+      
 end
