@@ -1,17 +1,93 @@
-<%= form_with(model: @resena, url: resenas_path(user_id: @user.id), local: true) do |form| %>
-  <%= form.hidden_field :user_id, value: @user.id %>
-  
-  <div class="field">
-    <%= form.label :puntuacion %>
-    <%= form.number_field :puntuacion, min: 1, max: 5 %>
-  </div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reseñas</title>
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/fotos-premium/calcetines-coloridos-colgando-secar_881868-1755.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      color: #fff;
+    }
 
-  <div class="field">
-    <%= form.label :comentario %>
-    <%= form.text_area :comentario %>
-  </div>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
 
-  <div class="actions">
-    <%= form.submit "Crear Reseña", class: "button is-primary" %>
+    .title {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .actions {
+      text-align: center;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Crear Reseña</h1>
+    
+    <%= form_with(model: @resena, url: resenas_path(user_id: @user.id), local: true) do |form| %>
+      <%= form.hidden_field :user_id, value: @user.id %>
+      
+      <div class="field">
+        <%= form.label :puntuacion %>
+        <%= form.number_field :puntuacion, min: 1, max: 5 %>
+      </div>
+
+      <div class="field">
+        <%= form.label :comentario %>
+        <%= form.text_area :comentario %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Crear Reseña", class: "button is-primary" %>
+      </div>
+    <% end %>
+    
+    <a href="<%= calcetines_path %>" class="back-link">Volver al Catálogo</a>
   </div>
-<% end %>
+</body>
+</html>

@@ -1,12 +1,64 @@
-<h1>Perfil de <%= @user.first_name %></h1>
+<!-- app/views/users/show.html.erb -->
 
-<p>Correo de usuario: <%= @user.email %></p>
-<p>Nombre de usuario: <%= @user.first_name %></p>
-<p>Apellido de usuario: <%= @user.last_name %></p>
-<p>Foto: <%= @user.profile_picture %></p>
-<p>Descripcion: <%= @user.id %></p>
+<style>
+  /* Estilos CSS en línea */
+  body {
+    background-image: url('https://img.freepik.com/fotos-premium/calcetines-coloridos-colgando-secar_881868-1755.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+  }
 
-<%= link_to "Crear Reseña", new_resena_path(user_id: @user.id), class: "button is-primary" %>
+  .profile-title {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #ffffff
+  }
 
+  .profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo con transparencia del 70% */
+    border-radius: 8px;
+  }
 
+  .profile-details {
+    flex: 1;
+    color: #fff;
+  }
 
+  .profile-details p {
+    margin: 10px 0;
+  }
+
+  .profile-image {
+    flex: 1;
+    text-align: center;
+  }
+
+  .profile-image img {
+    max-width: 200px;
+    border-radius: 50% ;
+  }
+  
+</style>
+
+<h1 class="profile-title">Perfil de <%= @user.first_name %></h1>
+
+<div class="profile-container">
+  <div class="profile-details">
+    <p><strong>Correo de usuario:</strong> <%= @user.email %></p>
+    <p><strong>Nombre de usuario:</strong> <%= @user.first_name %></p>
+    <p><strong>Apellido de usuario:</strong> <%= @user.last_name %></p>
+    <p><strong>Descripción:</strong> <%= @user.description %></p>
+    <%= link_to "Crear Reseña", new_resena_path(user_id: @user.id), class: "button is-primary" %>
+  </div>
+
+  <div class="profile-image">
+    <%= image_tag @user.profile_picture, alt: "Foto de perfil" if @user.profile_picture.present? %>
+  </div>
+</div>
