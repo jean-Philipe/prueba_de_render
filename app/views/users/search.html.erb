@@ -1,14 +1,90 @@
-<h1>Resultados de la búsqueda</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultados de la Búsqueda</title>
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/fotos-premium/calcetines-coloridos-colgando-secar_881868-1755.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
 
-<% if @search_results.any? %>
-  <ul>
-    <% @search_results.each do |user| %>
-      <li>
-        <%= link_to user.email, view_user_profile_path(user) %>
+    .search-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No se encontraron resultados.</p>
-<% end %>
+    .search-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .content-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-container">
+    <div class="search-box">
+      <h1>Resultados de búsqueda</h1>
+
+      <% if @search_results.any? %>
+        <ul>
+          <% @search_results.each do |user| %>
+            <li>
+              <%= link_to user.email, view_user_profile_path(user) %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No se encontraron resultados.</p>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>
