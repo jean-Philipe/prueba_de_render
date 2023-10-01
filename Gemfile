@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.0"
 
+ruby File.read('.ruby-version').strip
+
 gem 'cloudinary'
 
 # creada para devise
