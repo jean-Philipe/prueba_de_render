@@ -28,7 +28,6 @@ class ResenasController < ApplicationController
     private
   
   def resena_params
-    params.require(:resena).permit(:puntuacion, :comentario, :titulo)
+    params.require(:resena).permit(:puntuacion, :comentario, :titulo, :user_id)
   end
   end
-  
