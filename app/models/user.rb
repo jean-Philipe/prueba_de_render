@@ -10,11 +10,11 @@ class User < ApplicationRecord
 
   #cada usuario tiene una lista de calcetines que ya evaluo (puede ser like o no like)
   has_many :calcetines_evaluados, through: :likes, source: :calcetin
-  has_many :calcetines_likes, -> { where(liked: true) }, through: :likes, source: :calcetin
+  has_many :calcetines_likes, -> { where(likes: { liked: true }) }, through: :likes, source: :calcetin
   has_many :resenas, dependent: :destroy
 
   has_one_attached :profile_picture
-  has_many :calcetines, foreign_key: 'usuario_id', dependent: :destroy
+  has_many :calcetines_publicados, foreign_key: 'usuario_id', dependent: :destroy
 
   
 end
