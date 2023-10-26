@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/calcetines/:id/eliminar', to: 'calcetines#destroy', as: 'destroy_calcetin'
 
   get '/calcetines/:id/likes', to: 'likes#create', as: 'new_calcetin_like'
+  
 
 
 

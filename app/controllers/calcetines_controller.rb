@@ -5,7 +5,9 @@ class CalcetinesController < ApplicationController
   def index
     @calcetines = Calcetin.all
       @user_calcetines_evaluados = current_user.calcetines_evaluados
-      @calcetines_restantes = @calcetines - @user_calcetines_evaluados
+      @user_calcetines = @calcetines.select { |calcetin| calcetin.id_usuario == current_user.id }
+      @calcetines_restantes = @calcetines - @user_calcetines_evaluados - @user_calcetines
+
   end
   
   def show

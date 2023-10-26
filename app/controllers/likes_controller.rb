@@ -6,7 +6,7 @@ class LikesController < ApplicationController
   def create
     puts "estoy en create"
     @calcetin = Calcetin.find(params[:id])
-    liked = params[:liked] == 'true' # Convierte el parámetro liked en un booleano
+    liked = params[:liked] # Convierte el parámetro liked en un booleano
 
     @like = current_user.likes.build(
       id_calcetin: @calcetin.id,
@@ -14,7 +14,7 @@ class LikesController < ApplicationController
       liked: liked
     )
 
-    if @like.save
+    if @like.save 
       # Actualiza la lista de calcetines_evaluados
       current_user.calcetines_evaluados << @calcetin unless current_user.calcetines_evaluados.include?(@calcetin)
       @calcetines_evaluados = current_user.calcetines_evaluados
@@ -28,7 +28,8 @@ class LikesController < ApplicationController
   end
 
   def index 
-    @likes = current_user.calcetines_evaluados
+    @likes = current_user.calcetines_likes #son likes 
+    @calcetines_likes = Calcetin.where(id: @likes.pluck(:id_calcetin))
     render 'index'
   end 
   
