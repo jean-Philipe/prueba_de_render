@@ -14,7 +14,7 @@ class LikesController < ApplicationController
       liked: liked
     )
 
-    if @like.save
+    if @like.save 
       # Actualiza la lista de calcetines_evaluados
       current_user.calcetines_evaluados << @calcetin unless current_user.calcetines_evaluados.include?(@calcetin)
       @calcetines_evaluados = current_user.calcetines_evaluados
