@@ -1,0 +1,16 @@
+
+<div class="container">
+  <h1 class="title">Mis matches!</h1>
+
+  <div class="columns is-multiline is-variable is-4 card-container">
+    <% @matches.each do |match| %>
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-content">
+            <p class="Usuario"><%= match.user_2_id %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/calcetines/:id/likes', to: 'likes#create', as: 'new_calcetin_like'
   
 
+  get '/matches', to: 'matches#index', as: 'matches'
 
 
 

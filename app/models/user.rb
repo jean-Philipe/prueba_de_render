@@ -13,6 +13,14 @@ class User < ApplicationRecord
   has_many :calcetines_likes, -> { where(likes: { liked: true }) }, through: :likes, source: :calcetin
   has_many :resenas, dependent: :destroy
 
+  has_many :matches_as_user1, class_name: 'Match', foreign_key: 'user_1_id'
+  has_many :matches_as_user2, class_name: 'Match', foreign_key: 'user_2_id'
+
+  def matches
+    matches_as_user1 + matches_as_user2
+  end
+
+
   has_one_attached :profile_picture
   has_many :calcetines_publicados, foreign_key: 'usuario_id', dependent: :destroy
 

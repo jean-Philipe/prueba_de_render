@@ -19,6 +19,8 @@ class LikesController < ApplicationController
       current_user.calcetines_evaluados << @calcetin unless current_user.calcetines_evaluados.include?(@calcetin)
       @calcetines_evaluados = current_user.calcetines_evaluados
 
+      check_for_match(@calcetin, @like, current_user)
+
       flash[:success] = "Has evaluado al calcetín."
       redirect_to likes_path
     else
@@ -48,5 +50,28 @@ class LikesController < ApplicationController
 
     redirect_to @calcetin
   end
+
+
+  private
+
+  def check_for_match(calcetin, like, user)
+    @user = user
+    @like = like
+    @calcetin = calcetin
+    @usuarios_likeado_id= @calcetin.id_usuario
+    @usuario_likeado = User.find(@usuarios_likeado_id)
+    @mis_calcetines = Calcetin.where(id_usuario: @user.id)
+    @likes_usuario_likeado = @usuario_likeado.calcetines_likes #son likes 
+
+    matching_calcetines = @mis_calcetines.where(id: @likes_usuario_likeado.pluck(:id_calcetin))
+
+    if matching_calcetines.any?
+      Match.create(user_1_id: user.id, user_2_id: @usuarios_likeado_id)
+    end
+
+
+
+  end
+
   end
   
