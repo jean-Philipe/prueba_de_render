@@ -40,4 +40,21 @@ Rails.application.routes.draw do
   # Ruta para ver el perfil de un usuario por su ID
   get 'users/:id', to: 'users#show', as: 'view_user_profile'
   get 'search', to: 'users#search', as: 'user_search'
+  
+  resources :chats, only: [:show] do
+    member do
+      get 'messages', to: 'messages#show'
+    end
+  end
+
+  resources :chats, only: [:show, :create] do
+    get 'with/:user_id', action: :show, on: :member, as: 'with'
+  end
+
+  resources :chats do
+    resources :messages, only: [:show, :create]
+  end
+
+  
+  
 end

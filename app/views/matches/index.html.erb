@@ -3,11 +3,16 @@
   <h1 class="title">Mis matches!</h1>
 
   <div class="columns is-multiline is-variable is-4 card-container">
-    <% @matches.each do |match| %>
+    <% @usuarios_matches.each do |usuario| %>
       <div class="column is-one-third">
         <div class="card">
           <div class="card-content">
-            <p class="Usuario"><%= match.user_2_id %></p>
+          <a href="<%= chat_path(usuario) %>">
+            <p><strong>Correo de usuario:</strong> <%= usuario.email %></p>
+            <p><strong>Nombre de usuario:</strong> <%= usuario.first_name %></p>
+            <p><strong>Apellido de usuario:</strong> <%= usuario.last_name %></p>
+            <%= image_tag usuario.profile_picture, alt: "Imagen de perfil",  style: "max-width: 200px; height: 200px; border: 1px solid #ccc;"  if usuario.profile_picture.present? %>
+    
           </div>
         </div>
       </div>
