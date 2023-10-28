@@ -1,11 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# users.yml
+one:
+  email: user1@example.com
+  profile_picture: user1_profile.jpg
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+two:
+  email: user2@example.com
+  profile_picture: user2_profile.jpg
+
+three:
+  email: user3@example.com
+  profile_picture: user3_profile.jpg
+
