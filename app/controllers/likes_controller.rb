@@ -66,7 +66,8 @@ class LikesController < ApplicationController
     matching_calcetines = @mis_calcetines.where(id: @likes_usuario_likeado.pluck(:id_calcetin))
 
     if matching_calcetines.any?
-      Match.create(user_1_id: user.id, user_2_id: @usuarios_likeado_id)
+      @match = Match.create(user_1_id: user.id, user_2_id: @usuarios_likeado_id)
+      Chat.create(mensaje: " ", match_id: @match.id, user_1_id: user.id, user_2_id: @usuarios_likeado_id)
     end
 
 

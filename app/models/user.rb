@@ -17,9 +17,10 @@ class User < ApplicationRecord
   has_many :matches_as_user2, class_name: 'Match', foreign_key: 'user_2_id'
 
   def matches
-    matches_as_user1 + matches_as_user2
+    (matches_as_user1 + matches_as_user2).uniq
   end
 
+  has_many :chats, through: :matches_as_user1, source: :chat
 
   has_one_attached :profile_picture
   has_many :calcetines_publicados, foreign_key: 'usuario_id', dependent: :destroy

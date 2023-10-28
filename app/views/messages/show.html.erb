@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="title">Chat con <%= @usuario.email %></h1>
+  <div class="chat-container">
+    <div class="message-display">
+      <% @chat.messages.each do |message| %>
+        <div class="message">
+          <strong><%= message.user.first_name %>:</strong>
+          <%= message.content %>
+        </div>
+      <% end %>
+    </div>
+    <div class="message-input">
+      <%= form_with(model: @new_message, url: chat_messages_path(@chat), local: true) do |form| %>
+        <%= form.hidden_field :chat_id, value: @chat.id %>
+        <%= form.text_field :content, placeholder: "Escribe tu mensaje..." %>
+        <%= form.submit "Enviar" %>
+      <% end %>
+    </div>
+  </div>
+</div>

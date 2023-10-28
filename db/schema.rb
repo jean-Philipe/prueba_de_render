@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_02_024728) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_27_211059) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_024728) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chats", force: :cascade do |t|
+    t.text "mensaje"
+    t.integer "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_1_id"
+    t.integer "user_2_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "id_calcetin"
     t.integer "id_usuario_like"
@@ -63,6 +72,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_024728) do
   create_table "matches", force: :cascade do |t|
     t.integer "user_1_id"
     t.integer "user_2_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.integer "user_id"
+    t.integer "chat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,7 +111,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_02_024728) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "resenas", "users"
