@@ -104,11 +104,12 @@
 
     <!-- Filtros por categoría y orden alfabético -->
     <div class="filters">
-      <label>Filtrar por Categoría:</label>
+      <label>Filtrar por estado:</label>
       <a href="<%= calcetines_path %>" class="btn btn-primary">Todos</a>
-      <a href="<%= calcetines_path(category: 'nuevo') %>" class="btn btn-primary">Nuevo</a>
-      <a href="<%= calcetines_path(category: 'casi_nuevo') %>" class="btn btn-primary">Casi Nuevo</a>
-      <a href="<%= calcetines_path(category: 'usado') %>" class="btn btn-primary">Usado</a>
+      <a href="<%= calcetines_path(estado: 'Nuevo') %>" class="btn btn-primary">Nuevo</a>
+      <a href="<%= calcetines_path(estado: 'Casi Nuevo') %>" class="btn btn-primary">Casi Nuevo</a>
+      <a href="<%= calcetines_path(estado: 'Usado') %>" class="btn btn-primary">Usado</a>
+
     </div>
 
     <!-- Lista de calcetines de otros usuarios -->

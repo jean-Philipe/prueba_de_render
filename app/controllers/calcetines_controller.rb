@@ -6,12 +6,13 @@ class CalcetinesController < ApplicationController
     @user_calcetines = Calcetin.where(id_usuario: current_user.id)
     @calcetines_restantes = Calcetin.where.not(id: @user_calcetines_evaluados.pluck(:id))
     @calcetines_restantes = @calcetines_restantes.where.not(id: @user_calcetines.pluck(:id))
-
+  
     @calcetines = @calcetines_restantes
-
-    # Aplicar los filtros por categoría
-    if %w[nuevo casi_nuevo usado].include?(params[:category])
-      @calcetines = @calcetines.where(params[:category] => true)
+  
+    # Aplicar los filtros por estado
+        # Aplicar los filtros por estado
+    if %w[Nuevo Casi\ Nuevo Usado].include?(params[:estado])
+      @calcetines = @calcetines.where(estado: params[:estado])
     end
 
     # Ordenar los calcetines por nombre en orden alfabético ascendente
@@ -31,9 +32,7 @@ class CalcetinesController < ApplicationController
   end
 
   def create
-    calcetin_params = params.require(:calcetin).permit(:nombre, :descripcion, :foto, :estado)
-  
-    # No es necesario mapear el estado ya que se almacena directamente desde el formulario.
+    calcetin_params = params.require(:calcetin).permit(:nombre, :descripcion, :estado, :foto)
   
     if params[:calcetin][:foto].present?
       uploaded_file = params[:calcetin][:foto].tempfile
@@ -56,12 +55,19 @@ class CalcetinesController < ApplicationController
     @calcetin.usuario = current_user
   
     if @calcetin.save
+
       redirect_to calcetines_path, notice: 'El calcetín se ha creado con éxito.'
     else
+      puts "Estoy en el else"
       render 'new'
-    end
+    end# Aplicar los filtros por estado
+if %w[Nuevo Casi\ Nuevo Usado].include?(params[:estado])
+  @calcetines = @calcetines.where(estado: params[:estado])
+end
+
   end
   
+
   def edit
     @calcetin = Calcetin.find(params[:id])
   end
