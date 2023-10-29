@@ -18,6 +18,18 @@ class UsersController < ApplicationController
     else
       @user = User.find(params[:id])
     end
-    end
-      
+  end
+  def profile
+    @user = User.find(params[:id])
+  end  
+  def edit
+    @user = User.find(params[:id])
+    authorize! :edit, @user  # Asegura que el administrador tenga permiso para editar
+  end    
+# users_controller.rb
+  def calcetines
+    @user = User.find(params[:id])
+    @calcetines = @user.calcetines
+  end
+
 end
