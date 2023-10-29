@@ -10,9 +10,7 @@
         <li class="nav-item">
           <%= link_to "Editar cuenta", edit_user_registration_path, class:"nav-link" unless current_user.admin? %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Mi perfil", user_profile_path(current_user), class:"nav-link" %>
-        </li>
+      
         <li class="nav-item">
           <%= link_to "Calcetines like", likes_path, class: "nav-link" unless current_user.admin? %>
         </li>
