@@ -31,9 +31,7 @@ Rails.application.routes.draw do
 
   get '/matches', to: 'matches#index', as: 'matches'
 
-  resources :users do
-    get 'calcetines', on: :member
-  end
+
 
 
   devise_for :users, controllers: { registrations: 'users/registrations' }

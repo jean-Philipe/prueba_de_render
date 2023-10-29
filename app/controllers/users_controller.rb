@@ -10,15 +10,21 @@ class UsersController < ApplicationController
       # con el criterio de búsqueda
       @search_results = User.where("email LIKE ?", "%#{query}%")
   end
+ 
   def show
     if params[:id] == "sign_out"
       # Realiza acciones específicas para cerrar sesión, como eliminar la sesión actual, etc.
       sign_out(current_user) # Este es un ejemplo de cómo cerrar sesión con Devise.
       redirect_to root_path, notice: "Has cerrado sesión exitosamente."
     else
-      @user = User.find(params[:id])
+      if user_signed_in?
+        @user = User.find(params[:id])
+      else
+        redirect_to root_path, alert: "Usuario no encontrado."
+      end
     end
   end
+  
   def profile
     @user = User.find(params[:id])
   end  
