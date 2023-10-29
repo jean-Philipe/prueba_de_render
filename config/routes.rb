@@ -8,15 +8,16 @@ Rails.application.routes.draw do
   resources :calcetines do
     member do
       get 'editar' # Ruta y acción para editar un calcetín individual
-      #delete 'eliminar', to: 'calcetines#destroy' # Ruta y acción para eliminar un calcetín individual
     end
   end
   
+
   get 'admin/users', to: 'admin#users'
   get 'admin/user/:id', to: 'admin#show_user', as: 'admin_show_user'
   get 'admin/calcetin/:id/edit', to: 'admin#edit_calcetin', as: 'admin_edit_calcetin'
   delete 'admin/calcetin/:id', to: 'admin#destroy_calcetin', as: 'admin_destroy_calcetin'
   
+
   post '/likes', to: 'likes#index'
 
   get 'nuevo_calcetin', to: 'calcetines#new', as: 'new_calcetin'
@@ -44,6 +45,8 @@ Rails.application.routes.draw do
   # Ruta para ver el perfil de un usuario por su ID
   get 'users/:id', to: 'users#show', as: 'view_user_profile'
   get 'search', to: 'users#search', as: 'user_search'
+
+
   
   resources :chats, only: [:show] do
     member do

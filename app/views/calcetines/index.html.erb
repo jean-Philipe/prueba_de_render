@@ -100,28 +100,37 @@
 <body>
   <div class="page-container">
     <div class="container">
-      <h1 class="title">Explorar Calcetines de otros usuarios</h1>
+    <h1 class="title">Explora Calcetines de otros usuarios</h1>
 
-      <div class="columns is-multiline is-variable is-4">
-        <% @calcetines_restantes.each do |calcetin| %>
-          <div class="column">
-            <div class="card">
-              <div class="card-content">
-                <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín">
-                <p class="title" style="font-size: 24px;"><%= calcetin.nombre %></p>
-                <p class="subtitle"><%= calcetin.descripcion %></p>
-                <p class="subtitle"><%= calcetin.usuario.email %></p>
-              </div>
-              <div class="card-footer">
-                <div class="card-buttons">
-                  <%= link_to "Like", new_calcetin_like_path(calcetin, liked: true), method: :post, class: "btn btn-success" %>
-                  <%= link_to "NoLike", new_calcetin_like_path(calcetin, liked: false), method: :post, class: "btn btn-success" %>
-                </div>
-              </div>
+    <!-- Filtros por categoría y orden alfabético -->
+    <div class="filters">
+      <label>Filtrar por Categoría:</label>
+      <a href="<%= calcetines_path %>" class="btn btn-primary">Todos</a>
+      <a href="<%= calcetines_path(category: 'nuevo') %>" class="btn btn-primary">Nuevo</a>
+      <a href="<%= calcetines_path(category: 'casi_nuevo') %>" class="btn btn-primary">Casi Nuevo</a>
+      <a href="<%= calcetines_path(category: 'usado') %>" class="btn btn-primary">Usado</a>
+    </div>
+
+    <!-- Lista de calcetines de otros usuarios -->
+    <div class="columns is-multiline is-variable is-4">
+      <% @calcetines.each do |calcetin| %>
+        <div class="column">
+          <div class="card">
+            <div class="card-content">
+              <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín">
+              <p class="title" style="font-size: 24px;"><%= calcetin.nombre %></p>
+              <p class="subtitle"><%= calcetin.descripcion %></p>
+              <p class="subtitle"><%= calcetin.usuario.email %></p>
+
+            </div>
+            <div class="card-buttons">
+              <%= link_to "Like", new_calcetin_like_path(calcetin, liked: true), method: :post, class: "btn btn-success" %>
+              <%= link_to "NoLike", new_calcetin_like_path(calcetin, liked: false), method: :post, class: "btn btn-success" %>
             </div>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
+    </div>
     </div>
   </div>
   <div class="page-container">
@@ -143,11 +152,9 @@
                 <p class="title" style="font-size: 24px;"><%= calcetin.nombre %></p>
                 <p class="subtitle"><%= calcetin.descripcion %></p>
               </div>
-              <div class="card-footer">
-                <div class="card-buttons">
-                  <%= link_to "Editar", edit_calcetine_path(calcetin), method: :patch, class: "btn btn-warning" %>
-                  <%= link_to "Eliminar", destroy_calcetin_path(calcetin), method: :delete, class: "btn btn-danger", data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" } %>
-                </div>
+              <div class="card-buttons">
+                <%= link_to "Editar", edit_calcetine_path(calcetin), method: :get, class: "btn btn-warning" %>
+                <%= link_to "Eliminar", calcetine_path(calcetin), method: :delete, class: "btn btn-danger", data: { confirm: "¿Estás seguro de que deseas eliminar este calcetín?" } %>
               </div>
             </div>
           </div>
