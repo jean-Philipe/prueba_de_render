@@ -8,6 +8,7 @@ class Calcetin < ApplicationRecord
 
   validates :nombre, presence: true
   validates :descripcion, presence: true
+  validates :nuevo, :casi_nuevo, :usado, inclusion: { in: [true, false] }
 
     
 
