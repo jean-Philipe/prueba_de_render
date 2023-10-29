@@ -7,6 +7,7 @@ class MatchTest < ActiveSupport::TestCase
     @match = Match.new(user_1: @user1, user_2: @user2)
   end
 
+  
   test 'should be valid' do
     assert @match.valid?
   end
