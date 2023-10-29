@@ -1,0 +1,11 @@
+<h1>Calcetines de <%= @user.email %></h1>
+
+<ul>
+  <% @calcetines.each do |calcetin| %>
+    <li>
+      <%= calcetin.nombre %>
+      <%= link_to 'Editar', admin_edit_calcetin_path(calcetin) %>
+      <%= link_to 'Eliminar', admin_destroy_calcetin_path(calcetin), method: :delete, data: { confirm: '¿Estás seguro de eliminar este calcetín?' } %>
+    </li>
+  <% end %>
+</ul>
