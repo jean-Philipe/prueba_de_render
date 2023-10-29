@@ -9,7 +9,7 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('https://imagenes.elpais.com/resizer/POMntYajOsrQiIQTJQ147UIn7QI=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/G7D7UEHJCZ4GBPJFLOWM5BNH2I.jpg');
+      background-image: url('https://imagenes.elpais.com/resizer/POMntYajOsrQiIQTJQ147UIn7QI.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -29,21 +29,21 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: left;
-      width: 90%; /* Ajusta el ancho de la ventana */
-      max-width: 800px; /* Establece un ancho máximo */
+      width: 90%;
+      max-width: 800px;
     }
 
     .profile-content {
       display: flex;
-      flex-direction: row; /* Coloca la foto y el texto en fila */
-      align-items: flex-start; /* Alinea la parte superior de la foto y el texto */
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     .profile-image img {
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      margin-right: 20px; /* Espacio entre la foto y el texto */
+      margin-right: 20px;
     }
 
     .profile-text {
@@ -57,14 +57,21 @@
     <div class="profile-container">
       <div class="profile-content">
         <div class="profile-image">
-          <%= image_tag current_user.profile_picture, alt: "Imagen de perfil" if current_user.profile_picture.present? %>
+          <%= image_tag @user.profile_picture.url, alt: "Imagen de perfil" if @user.profile_picture.present? %>
         </div>
         <div>
           <h1>Mi perfil</h1>
-          <p><strong>Correo de usuario:</strong> <%= current_user.email %></p>
-          <p><strong>Nombre de usuario:</strong> <%= current_user.first_name %></p>
-          <p><strong>Apellido de usuario:</strong> <%= current_user.last_name %></p>
-          <p><strong>Descripción:</strong> <%= current_user.description %></p>
+          <p><strong>Correo de usuario:</strong> <%= @user.email %></p>
+          <p><strong>Nombre de usuario:</strong> <%= @user.first_name %></p>
+          <p><strong>Apellido de usuario:</strong> <%= @user.last_name %></p>
+          <p><strong>Descripción:</strong> <%= @user.description %></p>
+        </div>
+        <div>
+          <% if current_user.admin? %>
+            <%= link_to "Editar perfil", edit_user_path(@user), class: "btn btn-primary" %>
+          <% end %>
+          <!-- Botón para ver los calcetines del usuario -->
+          <%= link_to "Ver calcetines", user_calcetines_path(@user), class: "btn btn-primary" %>
         </div>
       </div>
     </div>
