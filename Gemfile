@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.0"
 
 gem 'cloudinary'
+# Gemfile
+gem 'cancancan'
+
 
 gem 'simplecov', require: false, group: :test
 

@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     end
   end
   
+
+  get 'admin/users', to: 'admin#users'
+  get 'admin/user/:id', to: 'admin#show_user', as: 'admin_show_user'
+  get 'admin/calcetin/:id/edit', to: 'admin#edit_calcetin', as: 'admin_edit_calcetin'
+  delete 'admin/calcetin/:id', to: 'admin#destroy_calcetin', as: 'admin_destroy_calcetin'
   
 
   post '/likes', to: 'likes#index'

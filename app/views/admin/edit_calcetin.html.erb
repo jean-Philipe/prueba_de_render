@@ -1,0 +1,19 @@
+<h1>Editar Calcetín</h1>
+
+<%= form_for @calcetin do |f| %>
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+  <!-- Agrega más campos de edición aquí según tus necesidades -->
+
+  <div class="actions">
+    <%= f.submit 'Guardar cambios' %>
+  </div>
+<% end %>
