@@ -24,3 +24,7 @@ class ActiveSupport::TestCase
     add_group 'Test', 'test'
   end
 end
+
+class ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+end

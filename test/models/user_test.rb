@@ -19,11 +19,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'should have many calcetines_likes through likes' do
-    assert_not @user.calcetines_likes.empty?
-  end
-
-  test 'should have many calcetines_evaluados through likes' do
-    assert_not @user.calcetines_evaluados.empty?
+    assert_not @user.calcetines_liked.empty?
   end
 
   test 'should have many resenas' do
