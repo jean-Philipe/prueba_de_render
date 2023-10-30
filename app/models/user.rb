@@ -26,7 +26,4 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
   has_many :calcetines_publicados, foreign_key: 'usuario_id', dependent: :destroy
 
-  def admin?
-    admin # Devuelve el valor del atributo admin
-  end
 end

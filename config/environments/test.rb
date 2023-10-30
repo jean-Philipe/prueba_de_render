@@ -52,6 +52,17 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
+  # config/environments/test.rb
+
+# Other test environment configuration...
+
+# Cloudinary configuration
+Cloudinary.config do |config|
+  config.cloud_name = 'drqn5ofg0'
+  config.api_key = '379166491736184'
+  config.api_secret = 'BYucFFrY9OKbmKQ1LrKAdlHQKDM'
+end
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
