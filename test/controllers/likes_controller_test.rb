@@ -17,4 +17,6 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Has evaluado al calcetín.", flash[:success]
   end
 
+
+
 end

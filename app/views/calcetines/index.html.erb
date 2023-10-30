@@ -121,7 +121,11 @@
               <img src="<%= calcetin.foto %>" alt="Imagen de Calcetín">
               <p class="title" style="font-size: 24px;"><%= calcetin.nombre %></p>
               <p class="subtitle"><%= calcetin.descripcion %></p>
-              <p class="subtitle"><%= calcetin.usuario.email %></p>
+              <% if calcetin.usuario.present? %>
+                <p class="subtitle"><%= calcetin.usuario.email %></p>
+              <% else %>
+                <p class="subtitle">Usuario no disponible</p>
+              <% end %>
 
             </div>
             <div class="card-buttons">

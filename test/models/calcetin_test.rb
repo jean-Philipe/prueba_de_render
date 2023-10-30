@@ -25,7 +25,7 @@ class CalcetinTest < ActiveSupport::TestCase
   end
 
   test "debería pertenecer a un usuario" do
-    @calcetin.usuario = nil
+    @calcetin.id_usuario = nil
     assert_not @calcetin.valid?
   end
 

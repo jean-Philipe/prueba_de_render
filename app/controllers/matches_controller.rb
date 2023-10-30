@@ -33,9 +33,6 @@ class MatchesController < ApplicationController
     @user = current_user
     @matches = @user.matches
     @matches.each do |match|
-      puts "ACA HAY UN MATCH #{match.id}"
-      puts "ID USER 1 #{match.user_1_id}"
-      puts "IS USER 2 #{match.user_2_id}"
     end
 
 

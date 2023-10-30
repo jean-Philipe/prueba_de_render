@@ -39,22 +39,6 @@ class LikesController < ApplicationController
     render 'index'
   end 
   
-    # Un usuario elimina su like
-  def destroy
-    @like = current_user.likes.find(params[:id])
-    @calcetin = @like.calcetin
-
-    if @like.destroy
-      # Elimina el calcetín de la lista de calcetines_evaluados
-      current_user.calcetines_evaluados.delete(@calcetin)
-      flash[:success] = "Has retirado tu 'like' del calcetín."
-    else
-      flash[:error] = "No se pudo retirar el 'like' del calcetín."
-    end
-
-    redirect_to @calcetin
-  end
-
 
   private
 

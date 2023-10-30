@@ -4,6 +4,7 @@ class CalcetinesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @calcetin = calcetins(:one)
     @user = users(:one)
+    @calcetin.usuario = @user
     sign_in @user # Inicia sesión con el usuario antes de ejecutar las pruebas
   end
 
@@ -39,5 +40,7 @@ class CalcetinesControllerTest < ActionDispatch::IntegrationTest
     patch update_calcetin_path(@calcetin), params: { calcetin: { nombre: @calcetin.nombre, descripcion: @calcetin.descripcion, estado: @calcetin.estado, foto: @calcetin.foto } }
     assert_redirected_to calcetines_path(@calcetin)
   end
+
+  
 
 end
