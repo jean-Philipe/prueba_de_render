@@ -2,8 +2,12 @@ ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
 require 'simplecov'
-SimpleCov.start 
 
+SimpleCov.start 'rails' do
+  add_filter '/bin' 
+  add_filter '/db'
+  add_filter '/test'
+end
 # Aquí irían las configuraciones adicionales de tus pruebas
 
 
