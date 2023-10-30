@@ -1,7 +1,7 @@
 {
   "Minitest": {
     "coverage": {
-      "/home/sebauc/2023-2-grupo-03/app/models/user.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/user.rb": {
         "lines": [
           1,
           null,
@@ -37,14 +37,14 @@
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/models/application_record.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/models/calcetin.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/calcetin.rb": {
         "lines": [
           1,
           null,
@@ -59,67 +59,10 @@
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/models/chat.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/chat.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/sebauc/2023-2-grupo-03/app/models/like.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/sebauc/2023-2-grupo-03/app/models/match.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/sebauc/2023-2-grupo-03/app/models/message.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/sebauc/2023-2-grupo-03/app/models/resena.rb": {
-        "lines": [
-          null,
           1,
           1,
           null,
@@ -130,7 +73,64 @@
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/main_view_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/like.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/match.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/message.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/resena.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/main_view_controller.rb": {
         "lines": [
           1,
           1,
@@ -138,7 +138,7 @@
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/application_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
@@ -154,67 +154,167 @@
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/application_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/admin_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/admin_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/calcetines_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/calcetines_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/chats_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/chats_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/likes_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/main_view_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/main_view_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/matches_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/matches_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/messages_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/messages_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/resenas_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/resenas_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/helpers/users_helper.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/sebauc/2023-2-grupo-03/app/channels/application_cable/channel.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/calcetines_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -224,7 +324,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/channels/application_cable/connection.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -234,151 +334,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/admin_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/calcetines_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/chats_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/chats_controller.rb": {
         "lines": [
           0,
           null,
@@ -441,7 +397,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/likes_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/likes_controller.rb": {
         "lines": [
           null,
           0,
@@ -529,7 +485,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/matches_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/matches_controller.rb": {
         "lines": [
           0,
           null,
@@ -595,7 +551,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/messages_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/messages_controller.rb": {
         "lines": [
           0,
           null,
@@ -642,7 +598,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/resenas_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/resenas_controller.rb": {
         "lines": [
           0,
           null,
@@ -681,7 +637,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users/confirmations_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users/confirmations_controller.rb": {
         "lines": [
           null,
           null,
@@ -717,7 +673,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users/omniauth_callbacks_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users/omniauth_callbacks_controller.rb": {
         "lines": [
           null,
           null,
@@ -753,7 +709,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users/passwords_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users/passwords_controller.rb": {
         "lines": [
           null,
           null,
@@ -793,7 +749,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users/registrations_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users/registrations_controller.rb": {
         "lines": [
           null,
           null,
@@ -861,7 +817,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users/sessions_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users/sessions_controller.rb": {
         "lines": [
           null,
           null,
@@ -894,7 +850,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users/unlocks_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users/unlocks_controller.rb": {
         "lines": [
           null,
           null,
@@ -930,7 +886,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/controllers/users_controller.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/controllers/users_controller.rb": {
         "lines": [
           0,
           0,
@@ -977,7 +933,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/jobs/application_job.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/jobs/application_job.rb": {
         "lines": [
           0,
           null,
@@ -990,7 +946,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/mailers/application_mailer.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -1000,7 +956,7 @@
         "branches": {
         }
       },
-      "/home/sebauc/2023-2-grupo-03/app/models/ability.rb": {
+      "/Users/isidorachavezc/software/2023-2-grupo-03/app/models/ability.rb": {
         "lines": [
           null,
           0,
@@ -1022,6 +978,6 @@
         }
       }
     },
-    "timestamp": 1698628593
+    "timestamp": 1698635847
   }
 }
