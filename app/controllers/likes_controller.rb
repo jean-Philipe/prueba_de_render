@@ -19,7 +19,11 @@ class LikesController < ApplicationController
       current_user.calcetines_evaluados << @calcetin unless current_user.calcetines_evaluados.include?(@calcetin)
       @calcetines_evaluados = current_user.calcetines_evaluados
 
-      check_for_match(@calcetin, @like, current_user)
+
+
+      if liked 
+        check_for_match(@calcetin, @like, current_user)
+      end
 
       flash[:success] = "Has evaluado al calcetín."
       redirect_to likes_path
@@ -30,7 +34,7 @@ class LikesController < ApplicationController
   end
 
   def index 
-    @likes = current_user.calcetines_likes #son likes 
+    @likes = current_user.calcetines_liked #son likes 
     @calcetines_likes = Calcetin.where(id: @likes.pluck(:id_calcetin))
     render 'index'
   end 
@@ -61,7 +65,7 @@ class LikesController < ApplicationController
     @usuarios_likeado_id= @calcetin.id_usuario
     @usuario_likeado = User.find(@usuarios_likeado_id)
     @mis_calcetines = Calcetin.where(id_usuario: @user.id)
-    @likes_usuario_likeado = @usuario_likeado.calcetines_likes #son likes 
+    @likes_usuario_likeado = @usuario_likeado.calcetines_liked #son likes 
 
     matching_calcetines = @mis_calcetines.where(id: @likes_usuario_likeado.pluck(:id_calcetin))
 
