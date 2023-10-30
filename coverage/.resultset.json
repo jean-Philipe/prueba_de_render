@@ -1,15 +1,71 @@
 {
   "Minitest": {
     "coverage": {
-      "/home/sebauc/2023-2-grupo-03/test/controllers/calcetines_controller_test.rb": {
+      "/home/sebauc/2023-2-grupo-03/test/controllers/admin_controller_test.rb": {
         "lines": [
           1,
           null,
           1,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/sebauc/2023-2-grupo-03/test/controllers/calcetines_controller_test.rb": {
+        "lines": [
           1,
           null,
+          1,
+          1,
+          0,
+          0,
           null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
           null,
           null
         ]
@@ -238,6 +294,7 @@
           0,
           null,
           null,
+          null,
           1,
           0,
           null,
@@ -391,6 +448,6 @@
         ]
       }
     },
-    "timestamp": 1698534390
+    "timestamp": 1698626356
   }
 }
