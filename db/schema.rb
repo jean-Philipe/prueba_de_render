@@ -50,9 +50,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_29_005339) do
     t.boolean "disponibilidad"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "nuevo"
-    t.boolean "casi_nuevo"
-    t.boolean "usado"
     t.string "estado"
   end
 
