@@ -1,4 +1,5 @@
-# users.yml
+# test/fixtures/users.yml
+
 one:
   email: user1@example.com
   profile_picture: user1_profile.jpg
@@ -11,3 +12,10 @@ three:
   email: user3@example.com
   profile_picture: user3_profile.jpg
 
+four:
+  email: user4@example.com
+  profile_picture: user4_profile.jpg
+
+five:
+  email: user5@example.com
+  profile_picture: user5_profile.jpg
