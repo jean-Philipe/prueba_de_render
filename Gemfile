@@ -87,4 +87,4 @@ end
 
 gem 'cloudinary'
 # Gemfile
-#gem 'cancancan'
+gem 'cancancan'
