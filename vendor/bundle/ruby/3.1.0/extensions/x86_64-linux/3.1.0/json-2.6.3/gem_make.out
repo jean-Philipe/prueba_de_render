@@ -1,0 +1,16 @@
+current directory: /home/jeanf/Software/2023-2-grupo-03/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+/home/jeanf/.rvm/rubies/ruby-3.1.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/jeanf/Software/2023-2-grupo-03/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231105-6001-dpusg6 sitelibdir\=./.gem.20231105-6001-dpusg6 clean
+
+current directory: /home/jeanf/Software/2023-2-grupo-03/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231105-6001-dpusg6 sitelibdir\=./.gem.20231105-6001-dpusg6
+make: Nothing to be done for 'all'.
+
+current directory: /home/jeanf/Software/2023-2-grupo-03/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231105-6001-dpusg6 sitelibdir\=./.gem.20231105-6001-dpusg6 install
+
+current directory: /home/jeanf/Software/2023-2-grupo-03/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20231105-6001-dpusg6 sitelibdir\=./.gem.20231105-6001-dpusg6 clean
