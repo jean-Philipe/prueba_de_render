@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # exit on error
 export RUBY_VERSION=3.1.0
+export GEM_HOME="/opt/render/project/.gems"
 set -o errexit
 
 bundle install
