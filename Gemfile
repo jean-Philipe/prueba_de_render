@@ -53,7 +53,7 @@ gem "bootsnap", require: false
 
 
 #integracion Rubocop
-gem 'rubocop', require: false
+#gem 'rubocop', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
