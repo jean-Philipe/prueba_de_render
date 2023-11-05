@@ -3,10 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.0"
 
-gem 'cloudinary'
-# Gemfile
-gem 'cancancan'
-
 gem 'rails-controller-testing'
 
 gem 'simplecov', require: false, group: :test
@@ -87,3 +83,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+gem 'cloudinary'
+# Gemfile
+gem 'cancancan'
